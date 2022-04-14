@@ -35,6 +35,16 @@ app.put('/api/persons/:id', (req, res) => {
    res.send(name);
 });
 
+app.delete('/api/persons/:id', (req,res) => {
+    const name = persons.find(c => c.id === parseInt(req.params.id));
+    if (!name) return res.status(404).send('the course with the given ID was not found');
+
+    const index = persons.indexOf(name);
+    persons.splice(index, 1);
+
+    res.send(name);
+});
+
 
 
 

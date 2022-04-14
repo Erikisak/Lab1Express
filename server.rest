@@ -2,10 +2,24 @@ POST http://localhost:3000/api/persons
 Content-Type: application/json
 
 {
-    "name": "new name"
+    "name": "Ludde"
 }
 
 ###
 
 PUT http://localhost:3000/api/persons/1
+Content-Type: application/json
+
+{
+    "name":"New name"
+}
+
+###
+
+GET http://localhost:3000/api/persons
+Content-Type: application/json
+
+###
+
+DELETE  http://localhost:3000/api/persons/1
 Content-Type: application/json
