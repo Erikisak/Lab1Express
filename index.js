@@ -7,6 +7,8 @@ const persons= [
     { id: 1, name: 'Erik'},
     { id: 2, name: 'Tilda'},
     { id: 3, name: 'Max'},
+    { id: 4, name: 'Philip'},
+    { id: 5, name: 'David'},
 ];
 
 app.get('/', (req, res) => {
@@ -20,11 +22,12 @@ app.get('/api/persons', (req, res) => {
 app.post('/api/persons', (req, res) => {
 
     const name = {
-        id: persons.length + 1,
+        id: persons[persons.length - 1].id + 1,
         name: req.body.name
     };
     persons.push(name);
     res.send(name);
+    console.log(persons.length + 1,)
 });
 
 app.put('/api/persons/:id', (req, res) => {
